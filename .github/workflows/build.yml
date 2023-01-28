@@ -11,15 +11,19 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-
+            - uses: actions/checkout@v2
+                    with:
+                      submodules: true
+                      fetch-depth: 0
 
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@v2
               with:
-                  hugo-version: "latest"
+                hugo-version: '0.100.2'
+                extended: true
 
-            - name: Build Web
-              run: hugo --minify
+            - name: Build Hugo
+              run: hugo -b "https://lucumt.info/" -e "production"
 
             - name: Deploy Web
               uses: peaceiris/actions-gh-pages@v3
