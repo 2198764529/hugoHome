@@ -49,4 +49,4 @@ title: "好记性不如烂笔头"
 你隐藏在窑烧里千年的秘密
 
 极细腻犹如绣花针落地
-![[assert/img/IMG_20230128_162005 1.jpg]]
+![](assert/img/MinimalistScenery04%201.jpg)
