@@ -43,9 +43,9 @@ class FrontMatter:
             for i,line in enumerate(lines):
                 if flag and (line==self.FMline and i!=0):
                     f.write("{}: {}\n".format(key,value))
-                if line[:line.find(':')]==key:
-                        f.write("{}: {}\n".format(key,value))
-                        flag = False
+                if line.startswith(key):
+                    f.write("{}: {}\n".format(key,value))
+                    flag = False
                 else:
                     f.write(line)
 
@@ -56,5 +56,6 @@ class FrontMatter:
                 f.truncate()
                 flag = True
                 for i,line in enumerate(lines):
-                    if not line[:line.find(':')]==key:
+                    if not line.startswith(key):
+                       
                         f.write(line)

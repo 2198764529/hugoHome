@@ -9,14 +9,9 @@ if __name__=="__main__":
     w = Walk('content')
     
     for f_path in w.getFiles():
-        if "_index.md" in f_path:
-            continue
         fm = FrontMatter(f_path)
         ctime = getFileTime(f_path,'Create')
         ctime = TimeStampToTime(ctime)
-        mtime = getFileTime(f_path,'Modify')
-        mtime = TimeStampToTime(mtime)
+        print(ctime)
         fm.setMdFMValue('PublishDate',ctime)
-        # fm.setMdFMValue('Lastmod',mtime)
-        # fm.delMdFMValue('PublishDate')
-        fm.delMdFMValue('Lastmod')
+        fm.delMdFMValue('t')
